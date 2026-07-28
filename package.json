@@ -1,0 +1,11 @@
+{
+  "name": "infinite-pixel-world",
+  "version": "1.36.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "node ./tests/dom-contract.mjs && node ./tests/destruculator-crosshair.mjs && node ./tests/player-step.mjs && node ./tests/bunnyhop.mjs && node ./tests/player-spawn-collision.mjs && node ./tests/player-depenetration.mjs && node ./tests/destruculator-targeting.mjs && node ./tests/laser-rifle.mjs && node ./tests/nyan-cat-launcher.mjs && node ./tests/reality-zipper.mjs && node ./tests/terrain-mushroom-grass.mjs && node ./tests/biome-blending.mjs && node ./tests/napalm-grenade.mjs && node ./tests/drone-strike.mjs && node ./tests/volcano-steam.mjs && node ./tests/liquid-gas-displacement.mjs && node ./tests/farming-day-night.mjs && node ./tests/glaive-ricochet-pixel-render.mjs && node ./tests/integer-grid.mjs && node ./tests/boss-caldera.mjs && node ./tests/ocean-serpent.mjs && node ./tests/boss-spawn-rituals.mjs && node ./tests/authored-structures-moon.mjs && node ./tests/moon-dimension.mjs && node ./tests/multi-dimensions-portals.mjs && node ./tests/dimension-portal-transit.mjs && node ./tests/moonme-portal.mjs && node ./tests/boss-roster.mjs && node ./tests/fauna-ecosystem.mjs && node ./tests/enemy-behaviors.mjs && node ./tests/invasion-frequency.mjs && node ./tests/furniture-crafting.mjs && node ./tests/weather-system.mjs && node ./tests/weather-visibility-render.mjs && node ./tests/fullscreen-hud-hunger.mjs && node ./tests/swimming-breath-atmosphere.mjs && node ./tests/swimming-column-depth.mjs && node ./tests/swimming-surface-latch.mjs && node ./tests/swimming-rotation.mjs && node ./tests/raw-food-cooking.mjs && node ./tests/save-load-world-ui.mjs && node ./tests/performance-optimization.mjs && node ./tests/game-juice.mjs && node ./tests/smoke.mjs && node ./tests/standalone-smoke.mjs",
+    "build": "node ./scripts/build-standalone.mjs"
+  }
+}

@@ -1,0 +1,82 @@
+:root {
+  color-scheme: dark;
+  background: #05070b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#game-shell {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #05070b;
+}
+
+body {
+  min-width: 240px;
+  min-height: 160px;
+  overscroll-behavior: none;
+}
+
+#game-shell {
+  position: fixed;
+  inset: 0;
+}
+
+#game {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  outline: 0;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  cursor: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.boot-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #090d14;
+  color: #dbe5f2;
+  font: 700 14px/1.4 monospace;
+  letter-spacing: .08em;
+  text-align: center;
+  pointer-events: none;
+}
+
+.boot-status[hidden] {
+  display: none;
+}
+
+.boot-status.boot-error {
+  background: #220d12;
+  color: #ffd4d8;
+  pointer-events: auto;
+  white-space: pre-wrap;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
