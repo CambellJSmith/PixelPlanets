@@ -86,7 +86,7 @@ static func descriptors_for_chunk(chunk: Dictionary, world: WorldModel) -> Array
 			results.append({"id":structure_id,"center_x":center_x,"center_y":center_y,"depth":depth})
 	return results
 
-static func _set(chunk: Dictionary, x: int, y: int, material: int) -> void:
+static func _set_cell(chunk: Dictionary, x: int, y: int, material: int) -> void:
 	var local_x: int = x - int(chunk["x"]) * GameConfig.WORLD_WIDTH
 	var local_y: int = y - int(chunk["y"]) * GameConfig.WORLD_HEIGHT
 	if local_x < 0 or local_y < 0 or local_x >= GameConfig.WORLD_WIDTH or local_y >= GameConfig.WORLD_HEIGHT: return
@@ -94,11 +94,11 @@ static func _set(chunk: Dictionary, x: int, y: int, material: int) -> void:
 
 static func _fill(chunk: Dictionary, x0: int, y0: int, x1: int, y1: int, material: int) -> void:
 	for y: int in range(mini(y0,y1), maxi(y0,y1)+1):
-		for x: int in range(mini(x0,x1), maxi(x0,x1)+1): _set(chunk,x,y,material)
+		for x: int in range(mini(x0,x1), maxi(x0,x1)+1): _set_cell(chunk,x,y,material)
 
 static func _frame(chunk: Dictionary, x0: int, y0: int, x1: int, y1: int, material: int) -> void:
-	for x: int in range(mini(x0,x1), maxi(x0,x1)+1): _set(chunk,x,mini(y0,y1),material); _set(chunk,x,maxi(y0,y1),material)
-	for y: int in range(mini(y0,y1), maxi(y0,y1)+1): _set(chunk,mini(x0,x1),y,material); _set(chunk,maxi(x0,x1),y,material)
+	for x: int in range(mini(x0,x1), maxi(x0,x1)+1): _set_cell(chunk,x,mini(y0,y1),material); _set_cell(chunk,x,maxi(y0,y1),material)
+	for y: int in range(mini(y0,y1), maxi(y0,y1)+1): _set_cell(chunk,mini(x0,x1),y,material); _set_cell(chunk,maxi(x0,x1),y,material)
 
 static func apply(chunk: Dictionary, d: Dictionary) -> void:
 	var cx: int = roundi(float(d["center_x"])); var id: String = String(d["id"])
