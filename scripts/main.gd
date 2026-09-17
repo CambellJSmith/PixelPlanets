@@ -41,7 +41,7 @@ func _ready() -> void:
 
 func _create_runtime() -> void:
 	state = GameState.new(1)
-	noise = PixelNoise.new(state)
+	noise = PixelNoise.new(state.seed)
 	world = WorldModel.new(state, noise)
 	time_system = TimeSystem.new(state)
 	weather_system = WeatherSystem.new(state, world, noise, time_system)
