@@ -49,7 +49,7 @@ func _damage_bosses_in_radius(x: float, y: float, radius: float, damage: float) 
 	return hit
 
 func _enemy_radius(enemy: Dictionary) -> float:
-	var species: Dictionary = FaunaData.fauna_by_id(String(enemy.get("species_id", "")))
+	var species: Dictionary = FaunaData.fauna(String(enemy.get("species_id", "")))
 	return float(species.get("hit_radius", enemy.get("hit_radius", 2.0)))
 
 func _update_bullets() -> void:
