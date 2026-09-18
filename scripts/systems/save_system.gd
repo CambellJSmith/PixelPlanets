@@ -290,7 +290,7 @@ func active_slot_from_storage() -> int:
 func load_last_active() -> bool:
 	var slot: int = active_slot_from_storage()
 	state.save["active_slot"] = slot
-	return load(slot, true)
+	return self.load(slot, true)
 
 func autosave() -> bool:
 	if not bool(state.save["dirty"]):
