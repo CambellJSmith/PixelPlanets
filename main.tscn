@@ -13,6 +13,7 @@ mouse_filter = 0
 script = ExtResource("1_main")
 
 [node name="Display" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +26,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Fallback" type="ColorRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,4 +35,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0156863, 0.0196078, 0.027451, 1)
-show_behind_parent = true
