@@ -1057,7 +1057,7 @@ func _draw_weapon_effects(origin: Vector2i) -> void:
 		var angle: float = state.sword_angle - 0.9 + (1.0 - float(state.sword_timer) / 12.0) * 1.8
 		_line(roundi(float(state.player["x"]))-origin.x,roundi(float(state.player["y"])-3.0)-origin.y,roundi(float(state.player["x"])+cos(angle)*8.0)-origin.x,roundi(float(state.player["y"])-3.0+sin(angle)*8.0)-origin.y,Color8(235,240,250),2)
 	if bool(state.build["active"]):
-		var preview: Dictionary = weapon_system.get_build_preview()
+		var preview: Dictionary = weapons.get_build_preview()
 		var start_x: int = roundi(float(state.player["x"]))-origin.x; var start_y: int = roundi(float(state.player["y"])-2.0)-origin.y
 		var target_x: int = int(preview["x"])-origin.x; var target_y: int = int(preview["y"])-origin.y
 		var color: Color = Color8(89,225,245) if bool(preview["valid"]) else Color8(255,104,112)
@@ -1076,7 +1076,7 @@ func _draw_weapon_effects(origin: Vector2i) -> void:
 		else:
 			_draw_invalid_cross(target_x,target_y,color)
 	elif state.weapon_id == 6:
-		var preview: Dictionary = weapon_system.get_destruculator_preview()
+		var preview: Dictionary = weapons.get_destruculator_preview()
 		var start_x: int = roundi(float(state.player["x"]))-origin.x; var start_y: int = roundi(float(state.player["y"])-2.0)-origin.y
 		var target_x: int = int(preview["x"])-origin.x; var target_y: int = int(preview["y"])-origin.y
 		var color: Color = Color8(224,105,255) if bool(preview["valid"]) else Color8(255,104,112)
@@ -1085,7 +1085,7 @@ func _draw_weapon_effects(origin: Vector2i) -> void:
 		if bool(preview["valid"]): _draw_target_corners(target_x,target_y,color,7)
 		else: _draw_invalid_cross(target_x,target_y,color)
 	elif state.weapon_id == 7:
-		var preview: Dictionary = weapon_system.get_drone_strike_preview()
+		var preview: Dictionary = weapons.get_drone_strike_preview()
 		var target_x: int = int(preview["x"])-origin.x; var target_y: int = int(preview["y"])-origin.y
 		var pointer_x: int = int(preview.get("pointer_x",preview["x"]))-origin.x; var pointer_y: int = int(preview.get("pointer_y",preview["y"]))-origin.y
 		var color: Color = Color8(255,178,58) if bool(preview["valid"]) else Color8(255,104,112)
