@@ -30,3 +30,7 @@ jobs:
       - name: Runtime Smoke Test
         shell: bash
         run: /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --headless --path . --quit-after 10
+
+      - name: Render Diagnostic
+        shell: bash
+        run: /tmp/godot/Godot_v4.7.2-stable_linux.x86_64 --headless --path . --script res://tests/render_diagnostic.gd
